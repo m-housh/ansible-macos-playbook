@@ -1,0 +1,26 @@
+---
+- name: Configure host.
+  hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_first_found:
+        - files:
+            - config.yml
+            - default.config.yml
+          skip: true
+      tags: ['always']
+    - name: Verify Ansible meets the version requirements.
+      assert:
+        that: "ansible_version.full is version_compare('2.14', '>=')"
+        msg: >
+          "This playbook requires at least Ansible 2.14"
+
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+    - role: homebrew
+      tags: [homebrew]

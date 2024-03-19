@@ -1,0 +1,38 @@
+---
+homebrew_taps:
+  - homebrew/cask-fonts
+  - espanso/espanso
+
+homebrew_packages:
+  - ansible
+  - figlet
+  - fzf
+  - gh
+  - git
+  - git-lfs
+  - go
+  - httpie
+  - hugo
+  - jq
+  - neovim
+  - prettier
+  - ripgrep
+  - sourcekitten
+  - tmux
+  - vapor
+  - zsh
+  - zsh-async
+  - zsh-completions
+
+homebrew_casks:
+  - arc
+  - docker
+  - espanso
+  - keymapp
+  - logi-options-plus
+  - onyx
+  - spacelauncher
+  - wezterm
+  - font-hack-nerd-font
+  - font-inconsolata-nerd-font
+  - font-jetbrains-mono-nerd-font
