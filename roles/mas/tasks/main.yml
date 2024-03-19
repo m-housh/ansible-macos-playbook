@@ -7,9 +7,9 @@
 
 - name: Get installed MAS apps
   ansible.builtin.command: mas list
-  register: mas_list
   check_mode: false
   changed_when: false
+  register: mas_list
 
 - name: Ensure MAS apps
   ansible.builtin.command: mas install "{{ item.id | default(id) }}"
