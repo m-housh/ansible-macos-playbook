@@ -2,6 +2,8 @@
 homebrew_taps:
   - homebrew/cask-fonts
   - espanso/espanso
+  - mhoush/formulae
+  - swift-psychrometrics/formula
 
 homebrew_packages:
   - ansible
@@ -15,9 +17,12 @@ homebrew_packages:
   - hugo
   - jq
   - neovim
+  - mas
+  - psychrometrics
   - prettier
   - ripgrep
   - sourcekitten
+  - swift-zet
   - tmux
   - vapor
   - zsh
@@ -36,3 +41,10 @@ homebrew_casks:
   - font-hack-nerd-font
   - font-inconsolata-nerd-font
   - font-jetbrains-mono-nerd-font
+
+mas_apps:
+  - { name: Amazon Kindle, id: 302584613 }
+  - { name: Bakery, id: 1575220747 }
+  - { name: pwSafe, id: 520993579 }
+  - { name: Xcode, id: 497799835 }
+

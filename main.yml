@@ -24,3 +24,5 @@
     - role: elliotweiser.osx-command-line-tools
     - role: homebrew
       tags: [homebrew]
+    - role: mas
+      tags: [mas]
