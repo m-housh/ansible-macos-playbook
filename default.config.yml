@@ -1,6 +1,25 @@
 ---
 ansible_dotfiles_role_install_path: "~/.local/ansible/roles/ansible-role-dotfiles"
 
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
+  - Freeform
+  - FaceTime
+  - Contacts
+
+dockitems_persist:
+  - name: "Arc"
+    path: "/Applications/Arc.app"
+    pos: 2
+  - name: "Calculator"
+    path: "/Applications/Calculator.app"
+  - name: "pwSafe"
+    path: /Applications/pwSafe.app"
+    pos: 3
+
 homebrew_taps:
   - homebrew/cask-fonts
   - espanso/espanso
