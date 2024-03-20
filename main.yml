@@ -26,3 +26,5 @@
       tags: [homebrew]
     - role: mas
       tags: [mas]
+    - role: dotfiles
+      tags: [dotfiles]

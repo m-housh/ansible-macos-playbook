@@ -1,0 +1,12 @@
+---
+- name: Ensure dotfiles role is installed.
+  ansible.builtin.git:
+    repo: "{{ dotfiles_role_repo }}"
+    dest: "{{ ansible_dotfiles_role_install_path }}"
+    version: "{{ ansible_dotfiles_role_repo_version }}"
+    accept_hostkey: "{{ ansible_dotfiles_role_repo_accept_hostkey }}"
+  become: false
+
+- name: Run dotfiles tasks.
+  ansible.builtin.include_role:
+    name: m-housh.dotfiles

@@ -1,4 +1,6 @@
 ---
+ansible_dotfiles_role_install_path: "~/.local/ansible/roles/ansible-role-dotfiles"
+
 homebrew_taps:
   - homebrew/cask-fonts
   - espanso/espanso

@@ -1,0 +1,5 @@
+---
+dotfiles_role_repo: "https://github.com/m-housh/ansible-role-dotfiles.git"
+ansible_dotfiles_role_install_path: "~/.local/ansible/roles/mhoush.dotfiles"
+ansible_dotfiles_role_repo_version: "main"
+ansible_dotfiles_role_repo_accept_hostkey: false
