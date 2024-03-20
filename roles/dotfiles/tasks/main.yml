@@ -9,7 +9,7 @@
 
 - name: Check dotfiles role stat.
   stat:
-    path: ~/.local/ansible/role/ansible-role-dotfiles
+    path: ~/.local/ansible/roles/ansible-role-dotfiles
   register: role_stat
 
 - name: Move role to appropriate location.
