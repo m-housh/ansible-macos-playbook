@@ -21,7 +21,6 @@
           "This playbook requires at least Ansible 2.14"
 
   roles:
-    - role: elliotweiser.osx-command-line-tools
     - role: homebrew
       tags: [homebrew]
     - role: mas
