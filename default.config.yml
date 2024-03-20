@@ -4,9 +4,11 @@ ansible_dotfiles_role_install_path: "~/.local/ansible/roles/ansible-role-dotfile
 homebrew_taps:
   - homebrew/cask-fonts
   - espanso/espanso
-  - mhoush/formulae
+  - m-housh/formula
   - swift-psychrometrics/formula
 
+# sourcekitten & vapor requires a full xcode to be installed, so we either need to do the
+# mas section first, or install later.
 homebrew_packages:
   - ansible
   - figlet
@@ -23,10 +25,10 @@ homebrew_packages:
   - psychrometrics
   - prettier
   - ripgrep
-  - sourcekitten
+  #- sourcekitten
   - swift-zet
   - tmux
-  - vapor
+  #- vapor
   - zsh
   - zsh-async
   - zsh-completions
@@ -48,5 +50,5 @@ mas_apps:
   - { name: Amazon Kindle, id: 302584613 }
   - { name: Bakery, id: 1575220747 }
   - { name: pwSafe, id: 520993579 }
-  - { name: Xcode, id: 497799835 }
+  #- { name: Xcode, id: 497799835 }
 
