@@ -6,6 +6,7 @@
     state: "{{ item.state | default('present') }}"
   loop: "{{ homebrew_taps }}"
   when: homebrew_taps | default([]) | count > 0
+  tags: taps
 
 - name: Ensure cask Apps
   community.general.homebrew_cask:
@@ -15,6 +16,8 @@
     accept_external_apps: true
   loop: "{{ homebrew_casks }}"
   when: homebrew_casks | default([]) | count > 0
+  tags: casks
+
 
 - name: Ensure packages
   community.general.homebrew:
@@ -23,3 +26,4 @@
     install_options: "{{ item.install_options | default(omit) }}"
   loop: "{{ homebrew_packages }}"
   when: homebrew_packages | default([]) | count > 0
+  tags: packages
