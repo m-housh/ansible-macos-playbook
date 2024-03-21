@@ -27,5 +27,3 @@
       tags: [mas]
     - role: dotfiles
       tags: [dotfiles]
-    - role: geerlingguy.mac.dock
-      tags: [dock]

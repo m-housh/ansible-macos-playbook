@@ -28,17 +28,23 @@
   tags: packages
 
 - name: Ensure fonts
-  community.general.homebrew:
-    name: "{{ item.name | default(item) }}"
-    state: "{{ item.state | default('present') }}"
-  loop: "{{ homebrew_fonts }}"
+  block:
+    - name: Ensure homebrew fonts tap.
+      community.general.homebrew_tap:
+        name: "homebrew/cask-fonts"
+        state: present
+    - name: Install fonts
+      community.general.homebrew:
+        name: "{{ item.name | default(item) }}"
+        state: "{{ item.state | default('present') }}"
+      loop: "{{ homebrew_fonts }}"
   when: homebrew_fonts | default([]) | count > 0
   tags: fonts
 
 - name: Fix permissions on the homebrew share directory.
   ansible.builtin.file:
     path: /opt/homebrew/share
-    mode: '0775'
+    mode: 'g-w'
     state: directory
     recurse: true
   become: true
