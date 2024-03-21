@@ -62,10 +62,13 @@ homebrew_casks:
   - onyx
   - spacelauncher
   - wezterm
+
+homebrew_fonts:
   - font-hack-nerd-font
   - font-inconsolata-nerd-font
   - font-jetbrains-mono-nerd-font
 
+# Un-comment Xcode when done testing, it takes forever to install.
 mas_apps:
   - { name: Amazon Kindle, id: 302584613 }
   - { name: Bakery, id: 1575220747 }

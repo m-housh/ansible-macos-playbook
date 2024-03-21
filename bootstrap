@@ -9,9 +9,14 @@ install_homebrew() {
 }
 
 main() {
+  printf "Installing homebrew"
   install_homebrew
+  printf "\nInstalling ansible"
   brew install ansible
+  printf "\nInstalling ansible-playbook requirements"
   ansible-galaxy  install -r requirements.yml
+  printf "\nRunning ansible-playbook with args: $@"
+  printf "\nThis will ask for your password."
   ansible-playbook main.yml --ask-become-pass "$@"
 }
 

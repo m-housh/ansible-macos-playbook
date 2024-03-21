@@ -35,3 +35,11 @@ homebrew_casks: []
 #   - {name: make, install_options: "with-default-names" }
 #   - mysql@5.7
 homebrew_packages: []
+
+# Fonts to install with Homebrew
+#
+# Example:
+#
+# homebrew_fonts:
+#   - font-jetbrains-mono-nerd-font
+homebrew_fonts: []
