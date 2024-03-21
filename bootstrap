@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+# Bootstrap a new machine.
+
+install_homebrew() {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> "$HOME/.zprofile"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+}
+
+main() {
+  install_homebrew
+  brew install ansible
+  ansible-galaxy  install -r requirements.yml
+  ansible-playbook main.yml --ask-become-pass "$@"
+}
+
+main "$@"
+
