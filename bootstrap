@@ -1,27 +1,36 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Bootstrap a new machine.
 #
 # Arguments passed in are directly passed to `ansible-playbook`
 
-install_homebrew() {
-  brew=$(command -v brew)
-  [ ! "$brew" -eq "" ] && return 0
+DEBUG=
+
+function install_homebrew() {
+  print "\nChecking for homebrew"
+  [ -z "$(command -v brew)" ] || return 0
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> "$HOME/.zprofile"
   eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
-main() {
-  print "\Checking for homebrew"
+function install_ansible() {
+  print "\nChecking for ansible"
+  [ -z "$(command -v ansible)" ] && brew install ansible
+}
+
+function main() {
   install_homebrew
-  print "\nInstalling ansible"
-  brew install ansible
+  install_ansible
+
   print "\nInstalling ansible-playbook requirements"
   ansible-galaxy install -r requirements.yml
+
   print "\nRunning ansible-playbook with args: $@"
   print "\nThis will ask for your password."
-  ansible-playbook main.yml --ask-become-pass "$@"
+  [ -z "$DEBUG" ] && \
+    ansible-playbook main.yml --ask-become-pass "$@" || \
+    print "\nAborting because in debug mode"
 }
 
 main "$@"
