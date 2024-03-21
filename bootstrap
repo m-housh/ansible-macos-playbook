@@ -44,6 +44,11 @@ function main() {
   [ -z "$DEBUG" ] && \
     ansible-playbook main.yml --ask-become-pass "$@" || \
     print "\nAborting because in debug mode"
+
+  print "\nReloading shell."
+  exec zsh -l
+
+  print "Done."
 }
 
 main "$@"

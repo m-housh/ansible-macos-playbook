@@ -8,13 +8,18 @@
   become: false
 
 - name: Check dotfiles role stat.
-  stat:
+  ansible.builtin.stat:
     path: ~/.local/ansible/roles/ansible-role-dotfiles
   register: role_stat
 
+- name: Check dotfiles role destination stat.
+  ansible.builtin.stat:
+    path: ~/.local/ansible/roles/m-housh.dotfiles
+  register: roles_destination_stat
+
 - name: Move role to appropriate location.
   ansible.builtin.command: mv ~/.local/ansible/roles/ansible-role-dotfiles ~/.local/ansible/roles/m-housh.dotfiles
-  when: role_stat.stat.exists
+  when: role_stat.stat.exists and not roles_destination_stat.stat.exists
 
 - name: Run dotfiles tasks.
   ansible.builtin.include_role:
