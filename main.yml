@@ -27,3 +27,5 @@
       tags: [mas]
     - role: dotfiles
       tags: [dotfiles]
+    - role: osx
+      tags: [osx-settings]

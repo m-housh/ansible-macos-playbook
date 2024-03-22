@@ -2,7 +2,7 @@
 - name: Ensure roles path exists.
   ansible.builtin.file:
     path: "{{ ansible_dotfiles_role_install_path | dirname }}"
-    state: present
+    state: directory
 
 - name: Ensure dotfiles role is installed.
   ansible.builtin.git:

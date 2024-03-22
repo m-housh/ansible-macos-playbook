@@ -1,0 +1,15 @@
+---
+# Set position of the dock.
+#
+# Accepted Positons:
+# - bottom
+# - left
+# - right
+dock_position: bottom
+
+autohide_dock: true
+# hide and show the dock immediately
+autohide_dock_delay: 0
+# hide dock quickly.
+autohide_dock_time_modifier: 0.2
+
