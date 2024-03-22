@@ -52,13 +52,12 @@ function main() {
     print "\nAborting because in debug mode"
 
   print "\nFixing permissions on homebrew share directory"
-  chmod -r g-w "$(brew --prefix)/share"
-
+  chmod -r g-w "/opt/homebrew/share"
 
   print "\nReloading shell."
-  echo "n" | exec zsh -l
+  exec zsh -l
 
-    install_nvim_plugins
+  install_nvim_plugins
 
   print "Done. Note some changes require a reboot to take effect."
 }
