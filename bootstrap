@@ -34,7 +34,8 @@ function install_ansible() {
 function install_nvim_plugins() {
   [ -f "$HOME/.config/m-housh/init.lua" ] && \
     print "\nInstalling neovim plugins, this may take a while" && \
-    /bin/zsh -l -c 'nvim --headless "+Lazy! sync" +qa'
+    /bin/zsh -l -c 'nvim --headless "+Lazy! sync" +qa' && \
+    /bin/zsh -l -c 'nvim --headless "+MasonUpdate" +qa'
 }
 
 function main() {
@@ -56,11 +57,10 @@ function main() {
 
   install_nvim_plugins
 
+  print "Done. Note some changes require a reboot to take effect."
+
   print "\nReloading shell."
   exec zsh -l
-
-
-  print "Done. Note some changes require a reboot to take effect."
 }
 
 main "$@"

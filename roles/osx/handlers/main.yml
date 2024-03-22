@@ -13,5 +13,4 @@
   with_items:
     - "Finder"
     - "SystemUIServer"
-    - "Dock"
 
