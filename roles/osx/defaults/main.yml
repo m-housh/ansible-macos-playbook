@@ -7,9 +7,64 @@
 # - right
 dock_position: bottom
 
-autohide_dock: true
+# auto hide the dock.
+dock_autohide: true
+
 # hide and show the dock immediately
-autohide_dock_delay: 0
+dock_autohide_delay: 0
+
 # hide dock quickly.
-autohide_dock_time_modifier: 0.2
+dock_autohide_time_modifier: 0
+
+# Set the screenshots location
+#
+# If you want to use the default location, then this can be an empty string.
+# Or set to `~/Desktop`
+screenshots_location: ~/Pictures/Screenshots
+
+# Set finder to show hidden files by default.
+finder_show_hidden_files: true
+
+# Set to show file extensions.
+finder_show_file_extensions: true
+
+# Set to show the path bar.
+finder_show_pathbar: true
+
+# Set to always expand save panels by default.
+finder_expand_save_panel: true
+
+# Disable automatic captialization.
+globals_enable_automatic_capitalization: false
+
+# Disable smart quotes.
+globals_enable_smart_quotes: false
+
+# Disable natural scroll direction.
+globals_enable_natural_scroll_direction: false
+
+# Set fast keyboard repeat
+globals_key_repeat: 1
+globals_initial_key_repeat: 10
+
+# Disable "Are you sure you want to open this application?" dialog
+globals_enable_application_quarantine: false
+
+# Disable Resume system wide.
+globals_enable_resume: false
+
+# Set the default view style.
+#
+# Accepted Values:
+# - clmv (Column View)
+# - Nlsv (List View)
+# - glyv (Gallery View)
+# - icnv (Icon View)
+finder_view_style: clmv
+
+# Show hard drives on desktop.
+desktop_show_hard_drives: true
+
+# Show connected servers on desktop.
+desktop_show_connected_servers: true
 

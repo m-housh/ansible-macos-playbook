@@ -29,3 +29,11 @@
       tags: [dotfiles]
     - role: osx
       tags: [osx-settings]
+
+  tasks:
+    # Remove the default ansible location and use xdg location.
+    - name: Cleanup.
+      ansible.builtin.file:
+        path: ~/.ansible
+        state: absent
+      when: remove_default_ansible_location

@@ -1,0 +1,47 @@
+---
+- name: Set show hidden files.
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: AppleShowAllFiles
+    type: boolean
+    value: "{{ finder_show_hidden_files }}"
+  notify: "Restart Finder"
+
+- name: Set show file extensions.
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: boolean
+    value: "{{ finder_show_file_extensions }}"
+  notify: "Restart Finder"
+
+- name: Set show file path bar.
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: boolean
+    value: "{{ finder_show_pathbar }}"
+  notify: "Restart Finder"
+
+- name: Set view style.
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: "{{ finder_view_style }}"
+  notify: "Restart Finder"
+  when: (finder_view_style.count | int) > 0
+
+- name: Set expand save panel.
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: "{{ item }}"
+    type: boolean
+    value: "{{ finder_expand_save_panel }}"
+  notify: "Restart Finder"
+  when: (finder_view_style.count | int) > 0
+  with_items:
+    - "NSNavPanelExpandedStateForSaveMode"
+    - "NSNavPanelExpandedStateForSaveMode2"
+
+

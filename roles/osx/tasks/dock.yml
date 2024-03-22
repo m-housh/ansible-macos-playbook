@@ -1,0 +1,37 @@
+---
+- name: Set dock position.
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: orientation
+    type: string
+    value: "{{ dock_position }}"
+  notify: "Restart Dock"
+
+- name: Set dock auto-hide.
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: boolean
+    value: "{{ dock_autohide }}"
+  notify: "Restart Dock"
+
+- name: Set dock attributes when auto-hide is enabled.
+  block:
+    - name: Set hide dock delay
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: autohide-delay
+        type: float
+        value: "{{ dock_autohide_delay }}"
+      notify: "Restart Dock"
+
+    - name: Set hide dock delay
+      community.general.osx_defaults:
+        domain: com.apple.dock
+        key: autohide-time-modifier
+        type: float
+        value: "{{ dock_autohide_time_modifier }}"
+      notify: "Restart Dock"
+  when: dock_autohide
+
+

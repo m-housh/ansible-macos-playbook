@@ -1,0 +1,57 @@
+---
+- name: Set automatic capitalization.
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticCapitalizationEnabled
+    type: boolean
+    value: "{{ globals_enable_automatic_capitalization }}"
+  notify: "Killall"
+
+- name: Set smart quotes.
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: boolean
+    value: "{{ globals_enable_smart_quotes }}"
+  notify: "Killall"
+
+- name: Set scroll direction.
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.swipescrolldirection
+    type: boolean
+    value: "{{ globals_enable_natural_scroll_direction }}"
+  notify: "Killall"
+
+- name: Set app quarantine.
+  community.general.osx_defaults:
+    domain: com.apple.LaunchServices
+    key: LSQuarantine
+    type: boolean
+    value: "{{ globals_enable_application_quarantine }}"
+  notify: "Killall"
+
+- name: Set app resume.
+  community.general.osx_defaults:
+    domain: com.apple.systempreferences
+    key: NSQuitAlwaysKeepsWindows
+    type: boolean
+    value: "{{ globals_enable_resume }}"
+  notify: "Killall"
+
+- name: Set key repeat.
+  block:
+    - name: Set key repeat.
+      community.general.osx_defaults:
+        domain: NSGlobalDomain
+        key: KeyRepeat
+        type: float
+        value: "{{ globals_key_repeat }}"
+      notify: "Killall"
+    - name: Set initial key repeat.
+      community.general.osx_defaults:
+        domain: NSGlobalDomain
+        key: InitialKeyRepeat
+        type: float
+        value: "{{ globals_initial_key_repeat }}"
+      notify: "Killall"

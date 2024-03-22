@@ -1,4 +1,5 @@
 ---
+remove_default_ansible_location: true
 ansible_dotfiles_role_install_path: "~/.local/ansible/roles/ansible-role-dotfiles"
 
 homebrew_taps:

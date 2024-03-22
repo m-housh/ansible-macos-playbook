@@ -1,35 +1,38 @@
 ---
-- name: Set dock position.
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: orientation
-    type: string
-    value: "{{ dock_position }}"
-  notify: "Restart Dock"
+- name: Close any open system preferences panes.
+  ansible.builtin.shell: osascript -e 'tell application "System Settings" to quit'
 
-- name: Set dock auto-hide.
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: autohide
-    type: boolean
-    value: "{{ autohide_dock }}"
-  notify: "Restart Dock"
+- name: Setup Dock.
+  ansible.builtin.include_tasks: dock.yml
+  tags: dock
 
-- name: Set hide dock delay
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: autohide-delay
-    type: float
-    value: "{{ autohide_dock_delay }}"
-  when: "{{ autohide_dock | bool }}"
-  notify: "Restart Dock"
+- name: Setup Finder.
+  include_tasks: finder.yml
+  tags: finder
 
-- name: Set hide dock delay
-  community.general.osx_defaults:
-    domain: com.apple.dock
-    key: autohide-time-modifier
-    type: float
-    value: "{{ autohide_dock_time_modifier }}"
-  when: "{{ autohide_dock | bool }}"
-  notify: "Restart Dock"
+- name: Setup Desktop.
+  ansible.builtin.include_tasks: desktop.yml
+  tags: desktop
+
+- name: Set screenshots location.
+  block:
+    - name: Ensure screenshot location exists.
+      ansible.builtin.file:
+        path: "{{ screenshots_location }}"
+        state: directory
+
+    - name: Set screenshots location.
+      community.general.osx_defaults:
+        domain: com.apple.screencapture
+        key: location
+        type: string
+        value: "{{ screenshots_location }}"
+      notify: "Restart UI Server"
+  when: (screenshots_location.count | int) > 0
+  tags: screenshots
+
+# Keep this last, as it will use the `Killall` handler
+- name: Setup globals.
+  ansible.builtin.include_tasks: globals.yml
+  tags: globals
 

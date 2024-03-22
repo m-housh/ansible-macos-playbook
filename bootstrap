@@ -56,7 +56,7 @@ function main() {
 
   install_nvim_plugins
 
-  print "Done."
+  print "Done. Note some changes require a reboot to take effect."
 }
 
 main "$@"

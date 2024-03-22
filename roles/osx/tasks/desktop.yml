@@ -1,0 +1,16 @@
+---
+- name: Set show hard disks.
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
+    type: boolean
+    value: "{{ desktop_show_hard_drives }}"
+  notify: "Restart Finder"
+
+- name: Set show connected servers.
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowMountedServersOnDesktop
+    type: boolean
+    value: "{{ desktop_show_connected_servers }}"
+  notify: "Restart Finder"
