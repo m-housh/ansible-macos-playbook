@@ -41,10 +41,3 @@
   when: homebrew_fonts | default([]) | count > 0
   tags: fonts
 
-- name: Fix permissions on the homebrew share directory.
-  ansible.builtin.file:
-    path: /opt/homebrew/share
-    mode: 'g-w'
-    state: directory
-    recurse: true
-  become: true
