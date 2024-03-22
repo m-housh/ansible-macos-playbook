@@ -33,7 +33,7 @@
       tags: [dock-items]
 
   tasks:
-    # Remove the default ansible location and use xdg location.
+    # Remove the default ansible config location and use xdg location.
     - name: Cleanup.
       ansible.builtin.file:
         path: ~/.ansible

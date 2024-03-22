@@ -59,7 +59,7 @@ mas_apps:
   - { name: pwSafe, id: 520993579 }
   #- { name: Xcode, id: 497799835 }
 
-dock_items_remove:
+dockitems_remove:
   - 'App Store'
   - Launchpad
   - Safari
@@ -70,7 +70,7 @@ dock_items_remove:
   - TV
   - News
 
-dock_items_persist:
+dockitems_persist:
   - name: Arc
     path: "/Applications/Arc.app"
     pos: 2

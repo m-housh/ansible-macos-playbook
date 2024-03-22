@@ -34,7 +34,7 @@ function install_ansible() {
 function install_nvim_plugins() {
   [ -f "$HOME/.config/m-housh/init.lua" ] && \
     print "\nInstalling neovim plugins, this may take a while" && \
-    nvim --headless "+Lazy! sync" +qa
+    /bin/zsh -l -c 'nvim --headless "+Lazy! sync" +qa'
 }
 
 function main() {
@@ -54,7 +54,7 @@ function main() {
   print "\nFixing permissions on homebrew share directory"
   chmod -R g-w "/opt/homebrew/share"
 
-  /bin/zsh -l install_nvim_plugins
+  install_nvim_plugins
 
   print "\nReloading shell."
   exec zsh -l
