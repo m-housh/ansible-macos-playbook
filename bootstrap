@@ -31,6 +31,12 @@ function install_ansible() {
   [ -z "$(command -v ansible)" ] && brew install ansible
 }
 
+function install_nvim_plugins() {
+  [ -f "$HOME/.config/m-housh/init.lua" ] && \
+    print "\nInstalling neovim plugins, this may take a while" && \
+    nvim --headless "+Lazy! sync" +qa
+}
+
 function main() {
   print_bootstrap
   install_homebrew
@@ -47,6 +53,8 @@ function main() {
 
   print "\nReloading shell."
   exec zsh -l
+
+  install_nvim_plugins
 
   print "Done."
 }
