@@ -54,10 +54,11 @@ function main() {
   print "\nFixing permissions on homebrew share directory"
   chmod -R g-w "/opt/homebrew/share"
 
+  install_nvim_plugins
+
   print "\nReloading shell."
   exec zsh -l
 
-  install_nvim_plugins
 
   print "Done. Note some changes require a reboot to take effect."
 }

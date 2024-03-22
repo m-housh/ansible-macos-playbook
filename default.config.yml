@@ -59,3 +59,28 @@ mas_apps:
   - { name: pwSafe, id: 520993579 }
   #- { name: Xcode, id: 497799835 }
 
+dock_items_remove:
+  - 'App Store'
+  - Launchpad
+  - Safari
+  - Maps
+  - FaceTime
+  - Reminders
+  - Freeform
+  - TV
+  - News
+
+dock_items_persist:
+  - name: Arc
+    path: "/Applications/Arc.app"
+    pos: 2
+  - name: pwSafe
+    path: "/Applications/pwSafe.app"
+    pos: 3
+  - name: WezTerm
+    path: "/Applications/WezTerm.app"
+    pos: 4
+  - name: Calculator
+    path: "/System/Applications/Calendar.app"
+    pos: 5
+

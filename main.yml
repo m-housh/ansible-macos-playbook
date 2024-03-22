@@ -29,6 +29,8 @@
       tags: [dotfiles]
     - role: osx
       tags: [osx-settings]
+    - role: dock-items
+      tags: [dock-items]
 
   tasks:
     # Remove the default ansible location and use xdg location.
