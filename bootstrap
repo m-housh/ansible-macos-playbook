@@ -51,14 +51,14 @@ function main() {
     ansible-playbook main.yml --ask-become-pass "$@" || \
     print "\nAborting because in debug mode"
 
-  print "\nReloading shell."
-  exec zsh -l -n
-
   print "\nFixing permissions on homebrew share directory"
-  compaudit | xargs chmod g-w
+  chmod -r g-w "$(brew --prefix)/share"
 
 
-  install_nvim_plugins
+  print "\nReloading shell."
+  echo "n" | exec zsh -l
+
+    install_nvim_plugins
 
   print "Done. Note some changes require a reboot to take effect."
 }
