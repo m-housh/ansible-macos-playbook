@@ -1,6 +1,8 @@
 ---
+# Because I prefer to put ansible stuff in an `xdg_config_home` location, this
+# will remove the default stuff once the playbook has ran.
 remove_default_ansible_location: true
-ansible_dotfiles_role_install_path: "~/.local/ansible/roles/ansible-role-dotfiles"
+ansible_dotfiles_role_install_path: "~/.local/ansible/roles/m-housh.dotfiles"
 
 homebrew_taps:
   - homebrew/cask-fonts
