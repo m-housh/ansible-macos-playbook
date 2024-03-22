@@ -52,7 +52,7 @@ function main() {
     print "\nAborting because in debug mode"
 
   print "\nFixing permissions on homebrew share directory"
-  chmod -r g-w "/opt/homebrew/share"
+  chmod -R g-w "/opt/homebrew/share"
 
   print "\nReloading shell."
   exec zsh -l
