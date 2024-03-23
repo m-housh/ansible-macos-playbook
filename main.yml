@@ -31,6 +31,8 @@
       tags: [osx-settings]
     - role: dock-items
       tags: [dock-items]
+    - role: launch-apps
+      tags: [launch-apps]
 
   tasks:
     # Remove the default ansible config location and use xdg location.

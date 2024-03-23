@@ -44,6 +44,7 @@ homebrew_casks:
   - keymapp
   - logi-options-plus
   - onyx
+  - rectangle
   - spacelauncher
   - wezterm
 
@@ -84,3 +85,7 @@ dockitems_persist:
     path: "/System/Applications/Calendar.app"
     pos: 5
 
+launch_apps:
+  - "/Applications/Rectangle.app"
+  - "/Applications/SpaceLauncher.app"
+  - "/Applications/Espanso.app"

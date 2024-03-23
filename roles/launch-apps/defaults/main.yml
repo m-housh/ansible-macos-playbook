@@ -1,0 +1,5 @@
+---
+
+# A list of paths to open, generally used on a fresh install when
+# apps need to be launched for the first time, to set them up.
+launch_apps: []

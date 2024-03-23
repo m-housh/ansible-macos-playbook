@@ -10,6 +10,8 @@
     dest: "{{ ansible_dotfiles_role_install_path }}"
     version: "{{ ansible_dotfiles_role_repo_version }}"
     accept_hostkey: "{{ ansible_dotfiles_role_repo_accept_hostkey }}"
+    update: true
+    force: true
   become: false
 
 - name: Check dotfiles role stat.

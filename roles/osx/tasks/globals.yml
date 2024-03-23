@@ -41,17 +41,37 @@
 
 - name: Set key repeat.
   block:
-    - name: Set key repeat.
+    - name: Set key repeat - float.
       community.general.osx_defaults:
         domain: NSGlobalDomain
         key: KeyRepeat
         type: float
         value: "{{ globals_key_repeat }}"
       notify: "Killall"
-    - name: Set initial key repeat.
+  rescue:
+    - name: Set key repeat - int.
+      community.general.osx_defaults:
+        domain: NSGlobalDomain
+        key: KeyRepeat
+        type: int
+        value: "{{ globals_key_repeat }}"
+      notify: "Killall"
+
+- name: Set intial key repeat.
+  block:
+    - name: Set initial key repeat - float.
       community.general.osx_defaults:
         domain: NSGlobalDomain
         key: InitialKeyRepeat
         type: float
         value: "{{ globals_initial_key_repeat }}"
       notify: "Killall"
+  rescue:
+    - name: Set initial key repeat - int.
+      community.general.osx_defaults:
+        domain: NSGlobalDomain
+        key: KeyRepeat
+        type: int
+        value: "{{ globals_key_repeat }}"
+      notify: "Killall"
+

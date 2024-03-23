@@ -1,0 +1,6 @@
+---
+
+- name: Launch apps.
+  ansible.builtin.shell: open "{{ item.path | default(item) }}"
+  with_items: "{{ launch_apps }}"
+  tags: launch-apps

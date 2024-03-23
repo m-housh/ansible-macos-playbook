@@ -21,7 +21,7 @@
       community.general.osx_defaults:
         domain: com.apple.dock
         key: autohide-delay
-        type: float
+        type: int
         value: "{{ dock_autohide_delay }}"
       notify: "Restart Dock"
 
