@@ -89,3 +89,20 @@ launch_apps:
   - "/Applications/Rectangle.app"
   - "/Applications/SpaceLauncher.app"
   - "/Applications/Espanso.app"
+
+projects_dir: "~/projects"
+sites_dir: "{{ projects_dir }}/sites"
+github_prefix: "https://github.com/m-housh"
+
+repos:
+  - repo: "{{ github_prefix }}/ansible-gen-playbook.git"
+    dest: "{{ projects_dir}}/ansible/ansible-gen-playbook"
+  - repo: "{{ github_prefix }}/mhoush.com.git"
+    dest: "{{ sites_dir }}/mhoush.com"
+  - repo: "{{ github_prefix }}/animalhouse.pro.git"
+    dest: "{{ sites_dir }}/animalhouse.pro"
+  - repo: "{{ github_prefix }}/hvachicks.com.git"
+    dest: "{{ sites_dir }}/hvachicks.com"
+  - repo: "{{ github_prefix }}/zets.git"
+    dest: "{{ projects_dir }}/zets"
+

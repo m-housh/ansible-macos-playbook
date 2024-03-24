@@ -33,6 +33,8 @@
       tags: [dock-items]
     - role: launch-apps
       tags: [launch-apps]
+    - role: repos
+      tags: [repos]
 
   tasks:
     # Remove the default ansible config location and use xdg location.

@@ -1,0 +1,6 @@
+---
+# A list of repositories to clone.
+repos:
+  - repo: ""
+    dest: ""
+    mode: '0770'

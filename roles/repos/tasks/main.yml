@@ -1,0 +1,14 @@
+---
+- name: Ensure repos parent directories exist.
+  ansible.builtin.file:
+    path: "{{ item.dest | dirname }}"
+    state: directory
+    mode: '0770'
+  with_items: "{{ repos }}"
+
+- name: Clone repositories.
+  ansible.builtin.git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode | default(omit) }}"
+  with_items: "{{ repos }}"
