@@ -20,7 +20,7 @@ homebrew_packages:
   - git
   - git-lfs
   - go
-  - httpie
+  #- httpie
   - hugo
   - jq
   - neovim
