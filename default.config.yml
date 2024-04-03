@@ -27,6 +27,7 @@ homebrew_packages:
   - jq
   - neovim
   - mas
+  - pass
   - psychrometrics
   - prettier
   - pure
@@ -96,6 +97,7 @@ projects_dir: "~/projects"
 sites_dir: "{{ projects_dir }}/sites"
 github_prefix: "https://github.com/m-housh"
 
+# TODO: Add password-store repo, need to setup an authentication key / token.
 repos:
   - repo: "{{ github_prefix }}/ansible-gen-playbook.git"
     dest: "{{ projects_dir}}/ansible/ansible-gen-playbook"
