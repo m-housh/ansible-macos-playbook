@@ -20,6 +20,8 @@ homebrew_packages:
   - git
   - git-lfs
   - go
+  - gpg2
+  - gpg-tui
   #- httpie
   - hugo
   - jq
