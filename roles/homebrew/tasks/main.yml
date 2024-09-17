@@ -29,10 +29,6 @@
 
 - name: Ensure fonts
   block:
-    - name: Ensure homebrew fonts tap.
-      community.general.homebrew_tap:
-        name: "homebrew/cask-fonts"
-        state: present
     - name: Install fonts
       community.general.homebrew:
         name: "{{ item.name | default(item) }}"

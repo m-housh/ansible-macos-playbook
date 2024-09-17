@@ -5,7 +5,7 @@ remove_default_ansible_location: true
 ansible_dotfiles_role_install_path: "~/.local/ansible/roles/m-housh.dotfiles"
 
 homebrew_taps:
-  - homebrew/cask-fonts
+  #- homebrew/cask-fonts
   - espanso/espanso
   - m-housh/formula
   - swift-psychrometrics/formula
