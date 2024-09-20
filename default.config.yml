@@ -30,7 +30,7 @@ homebrew_packages:
   - pass
   - psychrometrics
   - prettier
-  - pure
+  #- pure
   - ripgrep
   #- sourcekitten
   - swift-zet
@@ -47,8 +47,8 @@ homebrew_casks:
   - keymapp
   - logi-options-plus
   - onyx
-  - rectangle
-  - spacelauncher
+  #- rectangle
+  #- spacelauncher
   - wezterm
 
 homebrew_fonts:
