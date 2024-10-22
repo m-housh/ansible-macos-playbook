@@ -89,8 +89,8 @@ dockitems_persist:
     pos: 5
 
 launch_apps:
-  - "/Applications/Rectangle.app"
-  - "/Applications/SpaceLauncher.app"
+  #- "/Applications/Rectangle.app"
+  #- "/Applications/SpaceLauncher.app"
   - "/Applications/Espanso.app"
 
 projects_dir: "~/projects"
