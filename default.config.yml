@@ -20,22 +20,20 @@ homebrew_packages:
   - git
   - git-lfs
   - go
+  - gopass
   - gpg2
   - gpg-tui
-  #- httpie
+  - gum
   - hugo
   - jq
   - neovim
   - mas
-  - pass
   - psychrometrics
   - prettier
-  #- pure
   - ripgrep
-  #- sourcekitten
+  - starship
   - swift-zet
   - tmux
-  #- vapor
   - zsh
   - zsh-async
   - zsh-completions
@@ -47,8 +45,10 @@ homebrew_casks:
   - keymapp
   - logi-options-plus
   - onyx
-  #- rectangle
-  #- spacelauncher
+  - proton-drive
+  - proton-mail
+  - proton-pass
+  - raycast
   - wezterm
 
 homebrew_fonts:
